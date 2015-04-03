@@ -38,10 +38,15 @@ public class Car {
 	}
 	
 	/**
-	 * Decelerating the car
+	 * Decelerate the car. Prevent car speed from going
+	 * below zero.
 	 */
 	public void decelerate(int amount){
-		this.speed -= amount;
+		if (amount >= this.speed){
+			this.speed = 0;
+		}else{
+			this.speed -= amount;
+		}
 	}
 	
 	/**
